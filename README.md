@@ -1,3 +1,7 @@
+The website is being hosted at https://lampham-devpage.vercel.app/. Come take a look!
+
+Below is the boilerplate README:
+
 # Portfolio Blog Starter
 
 This is a porfolio site template complete with a blog. Includes:
