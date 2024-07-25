@@ -1,30 +1,16 @@
 // THE LIST OF ALL MY PROJECTS. UPDATE AS NEEDED
+import { Project, ProjectStatus } from "app/classes/projects/Project";
 
-enum ProjectStatus {
-    Building,
-    Refining,
-    Finished,
-    Scrapped
-}
-
-class Project {
-    id: Number
-    name: String
-    description?: String
-    link?: String
-    status: ProjectStatus
-    // lastUpdated: Date
-    image?: String // URL
-}
 
 export const projects: Project[] = [
   {
     id: 1,
     name: "SwipeAndFly",
-    description: "Travel planner app using LLM",
+    description:
+      "Travel planner app using LLM. Built with a team for hackathons!",
     link: "https://swipeandfly.world",
     status: ProjectStatus.Refining,
-    image: undefined,
+    image: "https://ik.imagekit.io/phamlam24/project-swipeandfly.jpg?",
   },
   {
     id: 2,
@@ -34,4 +20,13 @@ export const projects: Project[] = [
     status: ProjectStatus.Building,
     image: undefined,
   },
+  {
+    id: 3,
+    name: "My Website",
+    description: "The website you are seeing right now!",
+    link: "https://lampham-devpage.vercel.app/",
+    status: ProjectStatus.Building,
+    image: undefined,
+  },
 ];
+
