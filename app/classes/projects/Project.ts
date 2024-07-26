@@ -6,11 +6,12 @@ export enum ProjectStatus {
 }
 
 export class Project {
-  id: Number;
-  name: String;
-  description?: String;
-  link?: String;
+  id: number;
+  name: string;
+  description?: string;
+  link?: string;
   status: ProjectStatus;
   // lastUpdated: Date
-  image?: String; // URL
+  image?: string; // URL
+  isFeatured: boolean
 }

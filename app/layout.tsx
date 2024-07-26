@@ -71,6 +71,10 @@ export default function RootLayout({
               </main>
             </ThemeProvider>
           </AppRouterCacheProvider>
+          <script
+            src="https://kit.fontawesome.com/272846c8fe.js"
+            crossOrigin="anonymous"
+          ></script>
         </body>
       </html>
     </StyledEngineProvider>
