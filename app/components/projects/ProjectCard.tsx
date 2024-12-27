@@ -36,6 +36,26 @@ const projectStatusChip = new Map([
 //   [ProjectStatus.Scrapped, "Scrapped"],
 // ]);
 
+function getShowDate(date: string | Date): string {
+  const parsedDate = new Date(date);
+
+  if (isNaN(parsedDate.getTime())) {
+    return "Invalid date";
+  }
+
+  const options: Intl.DateTimeFormatOptions = {};
+
+  if (parsedDate.getDate() !== 1) {
+    options.day = "numeric";
+  }
+  if (parsedDate.getMonth() !== 0 || options.day) {
+    options.month = "long";
+  }
+  options.year = "numeric";
+
+  return parsedDate.toLocaleDateString("en-US", options);
+}
+
 export default function ProjectCard({ project, className }: ProjectCardProps) {
   return (
     <Card className={className}>
@@ -48,27 +68,32 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
         </div>
         {project.image && (
           <Image
-            src="https://ik.imagekit.io/phamlam24/project-swipeandfly.jpg?"
+            src={project.image}
             width={500}
             height={500}
             alt="test image"
-            className="mb-2 w-full h-auto"
+            className="mb-2 md:max-h-64 w-auto mx-auto"
           />
         )}
         <p>{project.description}</p>
       </CardContent>
-      {project.link && (
-        <CardActions className="ml-1">
-          <Button
-            size="small"
-            onClick={() => {
-              window.location.href = project.link!;
-            }}
-          >
-            Check It Out
-          </Button>
-        </CardActions>
-      )}
+      <div className="w-full pr-3 flex flex-row justify-between items-center">
+        {project.link && (
+          <CardActions className="ml-1">
+            <Button
+              size="small"
+              onClick={() => {
+                window.location.href = project.link!;
+              }}
+            >
+              Check It Out
+            </Button>
+          </CardActions>
+        )}
+        {project.lastUpdated && (
+          <p className="text-sm text-gray-400">Last updated: {getShowDate(project.lastUpdated)}</p>
+        )}
+      </div>
     </Card>
   );
 }

@@ -17,6 +17,10 @@ export default function Page() {
       <ul className="text-neutral-200 list-disc [&>*]:ml-4 [&>*]:mt-2">
         <li>jobs/internship opportunities</li>
         <li>projects</li>
+        <li>research</li>
+        <li>opportunities</li>
+        <li>or maybe, </li>
+        <li>just a chat!</li>
       </ul>
       <p className="mt-4">via</p>
 
