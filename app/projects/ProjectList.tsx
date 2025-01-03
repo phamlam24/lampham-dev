@@ -1,20 +1,6 @@
 // THE LIST OF ALL MY PROJECTS. UPDATE AS NEEDED
+import { Months } from "app/classes/helper";
 import { Project, ProjectShowPriority, ProjectStatus } from "app/classes/projects/Project";
-
-enum Months {
-  JANUARY = 0,
-  FEBRUARY = 1,
-  MARCH = 2,
-  APRIL = 3,
-  MAY = 4,
-  JUNE = 5,
-  JULY = 6,
-  AUGUST = 7,
-  SEPTEMBER = 8,
-  OCTOBER = 9,
-  NOVEMBER = 10,
-  DECEMBER = 11,
-}
 
 export const projects: Project[] = [
   {

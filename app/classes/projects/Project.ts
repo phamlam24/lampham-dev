@@ -1,3 +1,5 @@
+import { Color } from "../helper";
+
 export enum ProjectStatus {
   Building,
   Refining,
@@ -9,6 +11,11 @@ export enum ProjectShowPriority {
   HIGH = 2,
   MEDIUM = 1,
   LOW = 0,
+}
+
+export class ProjectTag {
+  name: string;
+  color: Color;
 }
 
 export class Project {
