@@ -7,9 +7,15 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
-      <BlogPosts />
-    </section>
+    <>
+      <section>
+        <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
+          My Blog
+        </h1>
+        <p>Blogs are currently unfinished. See you soon!</p>
+        <br/>
+        <BlogPosts />
+      </section>
+    </>
   );
 }

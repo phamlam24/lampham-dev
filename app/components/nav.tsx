@@ -12,10 +12,7 @@ const navItems = {
   },
   '/contact': {
     name: 'contact me'
-  }
-  // 'https://vercel.com/templates/next.js/portfolio-starter-kit': {
-  //   name: 'deploy',
-  // },
+  },
 }
 
 export function Navbar() {
