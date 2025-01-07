@@ -1,4 +1,4 @@
-import { Color } from "../helper";
+import { Color } from "../../helpers/helper";
 
 export enum ProjectStatus {
   Building,

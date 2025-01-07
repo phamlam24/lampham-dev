@@ -1,6 +1,10 @@
 // THE LIST OF ALL MY PROJECTS. UPDATE AS NEEDED
-import { Months } from "app/classes/helper";
-import { Project, ProjectShowPriority, ProjectStatus } from "app/classes/projects/Project";
+import { Months } from "app/helpers/date";
+import {
+  Project,
+  ProjectShowPriority,
+  ProjectStatus,
+} from "app/classes/projects/Project";
 
 export const projects: Project[] = [
   {
@@ -17,7 +21,7 @@ export const projects: Project[] = [
     id: 2,
     name: "My Website",
     description: "The website you are seeing right now!",
-    link: "../",
+    link: "../about_website",
     status: ProjectStatus.Building,
     lastUpdated: new Date(2024, Months.DECEMBER),
     image: undefined,
@@ -71,4 +75,3 @@ export const projects: Project[] = [
     status: ProjectStatus.Building,
   },
 ];
-

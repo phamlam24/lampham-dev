@@ -13,9 +13,6 @@ const navItems = {
   '/contact': {
     name: 'contact me'
   },
-  '/about_website' : {
-    name: 'about this website'
-  }
 }
 
 export function Navbar() {

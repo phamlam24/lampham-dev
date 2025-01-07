@@ -34,7 +34,18 @@ const darkTheme = createTheme({
   },
   palette: {
     mode: "dark",
-
+    primary: {
+      light: "#357a38",
+      main: "#4caf50",
+      dark: "#6fbf73",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#8ab200",
+      main: "#c6ff00",
+      dark: "#d1ff33",
+      contrastText: "#000",
+    },
   },
   breakpoints: {
     values: {
@@ -44,7 +55,7 @@ const darkTheme = createTheme({
       lg: 1024,
       xl: 1280,
       xl2: 1536,
-    }
-  }
+    },
+  },
 });
 export default darkTheme;
