@@ -23,4 +23,52 @@ export const changelog = [
       "Fix some UI things and add more functionality in the version system",
     ]
   ),
+  new Update(
+    UpdateType.Minor,
+    new Date(2025, Months.JANUARY, 14),
+    "Front Page Update",
+    "Update the front page for more data!",
+    [
+      "Update front page to also show latest project",
+      "Various other bug fixes"
+    ]
+  )
 ];
+
+export function changelogWithVersion() {
+  let lastVersion: string;
+
+  let versionNameArray = changelog.map((log, index) => {
+    const previousVersion =
+      index > 0 ? lastVersion.split(".").map(Number) : [0, 0, 0];
+    let [major, minor, patch] = previousVersion;
+    switch (log.type) {
+      case UpdateType.Major:
+        major += 1;
+        minor = 0;
+        patch = 0;
+        break;
+      case UpdateType.Minor:
+        minor += 1;
+        patch = 0;
+        break;
+      case UpdateType.Patch:
+        patch += 1;
+        break;
+    }
+    lastVersion = `${major}.${minor}.${patch}`;
+    return lastVersion;
+  });
+
+  return changelog.map((log, index) => {
+    return {
+      changelog: log,
+      versionName: versionNameArray[index],
+    };
+  });
+}
+
+export function getLatestVersion(): string{
+  let versionList = changelogWithVersion();
+  return versionList[versionList.length - 1].versionName
+}

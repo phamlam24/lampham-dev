@@ -1,3 +1,5 @@
+import { getLatestVersion } from "app/about_website/update_data";
+
 function ArrowIcon() {
   return (
     <svg
@@ -53,17 +55,17 @@ export default function Footer() {
           </a>
         </li>
         <li>
-            <a
+          <a
             className="flex items-center transition-all text-gray-500 hover:text-neutral-800 dark:hover:text-neutral-400"
             rel="noopener noreferrer"
             href="/about_website"
-            >
+          >
             <p className="ml-2 h-7">about website</p>
-            </a>
+          </a>
         </li>
       </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-500">
-        version 0.0.1
+      <p className="mt-4 text-neutral-600 dark:text-neutral-500">
+        version {getLatestVersion()}
       </p>
       <p className="mt-4 text-neutral-600 dark:text-neutral-300">
         © {new Date().getFullYear()} MIT Licensed

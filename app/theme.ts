@@ -6,7 +6,7 @@ import { GeistMono } from "geist/font/mono";
 
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {
-    xs: true; // removes the `xs` breakpoint
+    xs: true;
     sm: true;
     md: true;
     lg: true;
@@ -31,6 +31,12 @@ const darkTheme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
+    h1: {
+      fontSize: "1.5rem",
+      lineHeight: "2rem",
+      letterSpacing: "-0.05em",
+      fontWeight: 600,
+    }
   },
   palette: {
     mode: "dark",

@@ -1,40 +1,14 @@
 import { UpdateType } from "app/classes/about_website/Changelog";
-import { changelog } from "./update_data";
+import { changelog, changelogWithVersion } from "./update_data";
 import VersionAccordion from "app/components/about_website/VersionAccordion";
 
 export default function Page() {
-  let lastVersion: string;
-  let versionNameArray = changelog.map((log, index) => {
-    const previousVersion = index > 0 ? lastVersion.split('.').map(Number) : [0, 0, 0];
-    let [major, minor, patch] = previousVersion;
-    switch (log.type) {
-      case UpdateType.Major:
-        major += 1;
-        minor = 0;
-        patch = 0;
-        break;
-      case UpdateType.Minor:
-        minor += 1;
-        patch = 0;
-        break;
-      case UpdateType.Patch:
-        patch += 1;
-        break;
-    }
-    lastVersion = `${major}.${minor}.${patch}`;
-    return lastVersion;
-  });
 
-  let changelogWithVersion = changelog.map((log, index) => {
-    return {
-      changelog: log,
-      versionName: versionNameArray[index]
-    }
-  })
+  let changelogData = changelogWithVersion();
 
-  changelogWithVersion.reverse();
+  changelogData.reverse();
 
-  let changelogList = changelogWithVersion.map((log) => {
+  let changelogList = changelogData.map((log) => {
     return <VersionAccordion key={log.versionName} version={log.changelog} versionString={log.versionName}/>
   });
 

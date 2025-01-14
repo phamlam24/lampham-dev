@@ -72,11 +72,11 @@ export default function VersionAccordion({
         </Grid>
       </AccordionSummary>
       <AccordionDetails>
-        <i className="mb-3">{version.notes}</i>
-        <Divider />
+        <i className="mb-3 text-sm">{version.notes}</i>
+        <Divider sx={{marginTop: "0.75rem"}}/>
         <ul className="mt-3">
           {version.details.map((detail, index) => (
-            <li key={index}>{detail}</li>
+            <li key={index} className="text-sm list-disc ml-3">{detail}</li>
           ))}
         </ul>
       </AccordionDetails>
